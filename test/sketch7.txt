@@ -1,0 +1,14 @@
+@person
+--------------------
+id   |  name
+--------------------
+1       Mario      ;
+2       Romildo ;
+
+
+@country
+---------------------
+id   |  name
+---------------------
+1       Mozambique
+2       South Africa
