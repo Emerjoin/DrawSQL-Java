@@ -1,4 +1,4 @@
-package mz.co.talkcode.drawQL;
+package mz.co.talkcode.drawSQL;
 
 import org.apache.log4j.Logger;
 

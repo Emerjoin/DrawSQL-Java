@@ -1,4 +1,4 @@
-package mz.co.talkcode.drawQL;
+package mz.co.talkcode.drawSQL;
 
 /**
  * @author Mário Júnior

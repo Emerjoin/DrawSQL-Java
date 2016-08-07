@@ -1,8 +1,8 @@
 package test.mz.co.talkcode;
 
-import mz.co.talkcode.drawQL.DrawQL;
-import mz.co.talkcode.drawQL.DrawQLException;
-import mz.co.talkcode.drawQL.TableInfo;
+import mz.co.talkcode.drawSQL.DrawSQL;
+import mz.co.talkcode.drawSQL.DrawSQLException;
+import mz.co.talkcode.drawSQL.TableInfo;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,11 +19,11 @@ public class SuccessTests {
 
         try {
 
-            DrawQL.Builder builder = new DrawQL.Builder();
-            DrawQL drawQL = builder.fromSketch(new File("test/sketch1.dql")).build();
-            assertEquals(1,drawQL.getTableInfos().length);
+            DrawSQL.Builder builder = new DrawSQL.Builder();
+            DrawSQL drawSQL = builder.fromSketch(new File("test/sketch1.dql")).build();
+            assertEquals(1, drawSQL.getTableInfos().length);
 
-            TableInfo tableInfo = drawQL.getTableInfos()[0];
+            TableInfo tableInfo = drawSQL.getTableInfos()[0];
             TableInfo.DataRow[] rows = tableInfo.getRows();
             assertEquals("person",tableInfo.getName());
             assertEquals(2,rows.length);
@@ -41,7 +41,7 @@ public class SuccessTests {
             assertEquals(2,row2.getInt("id"));
             assertEquals("Romildo",row2.getString("name"));
 
-        }catch (DrawQLException ex){
+        }catch (DrawSQLException ex){
 
             ex.printStackTrace();
             fail();
@@ -60,11 +60,11 @@ public class SuccessTests {
 
         try {
 
-            DrawQL.Builder builder = new DrawQL.Builder();
-            DrawQL drawQL = builder.fromSketch(new File("test/sketch2.dql")).build();
-            assertEquals(1,drawQL.getTableInfos().length);
+            DrawSQL.Builder builder = new DrawSQL.Builder();
+            DrawSQL drawSQL = builder.fromSketch(new File("test/sketch2.dql")).build();
+            assertEquals(1, drawSQL.getTableInfos().length);
 
-            TableInfo tableInfo = drawQL.getTableInfos()[0];
+            TableInfo tableInfo = drawSQL.getTableInfos()[0];
             TableInfo.DataRow[] rows = tableInfo.getRows();
             assertEquals("person",tableInfo.getName());
             assertEquals(2,rows.length);
@@ -82,7 +82,7 @@ public class SuccessTests {
             assertEquals(2,row2.getInt("id"));
             assertEquals("Romildo",row2.getString("name"));
 
-        }catch (DrawQLException ex){
+        }catch (DrawSQLException ex){
 
             ex.printStackTrace();
             fail();
@@ -102,11 +102,11 @@ public class SuccessTests {
 
         try {
 
-            DrawQL.Builder builder = new DrawQL.Builder();
-            DrawQL drawQL = builder.fromSketch(new File("test/sketch3.dql")).enableLogging().build();
-            assertEquals(3, drawQL.getTableInfos().length);
+            DrawSQL.Builder builder = new DrawSQL.Builder();
+            DrawSQL drawSQL = builder.fromSketch(new File("test/sketch3.dql")).enableLogging().build();
+            assertEquals(3, drawSQL.getTableInfos().length);
 
-            TableInfo table1 = drawQL.getTableInfos()[0];
+            TableInfo table1 = drawSQL.getTableInfos()[0];
             assertEquals("person",table1.getName());
             assertEquals(2,table1.totalRows());
             assertEquals(2,table1.totalColumns());
@@ -122,7 +122,7 @@ public class SuccessTests {
             assertEquals(2,row2.getInt("id"));
             assertEquals("Romildo",row2.getString("name"));
 
-            TableInfo table2 = drawQL.getTableInfos()[1];
+            TableInfo table2 = drawSQL.getTableInfos()[1];
             assertEquals("group",table2.getName());
             assertEquals(2,table2.totalRows());
             TableInfo.ColumnInfo table2Col1 = table2.getColumns()[0];
@@ -136,7 +136,7 @@ public class SuccessTests {
             assertEquals(2,table2Row2.getInt("id"));
             assertEquals("Developers",table2Row2.getString("name"));
 
-            TableInfo table3 = drawQL.getTableInfos()[2];
+            TableInfo table3 = drawSQL.getTableInfos()[2];
             assertEquals("person_group",table3.getName());
             assertEquals(3,table3.totalColumns());
             assertEquals(2,table3.totalRows());
@@ -150,7 +150,7 @@ public class SuccessTests {
             assertEquals(1,table3Row2.getInt("group_id"));
             assertEquals(2,table3Row2.getInt("person_id"));
 
-        }catch (DrawQLException ex){
+        }catch (DrawSQLException ex){
 
             fail();
 

@@ -1,9 +1,9 @@
-package mz.co.talkcode.drawQL;
+package mz.co.talkcode.drawSQL;
 
 /**
  * @author Mário Júnior
  */
-public class ParseException extends DrawQLException {
+public class ParseException extends DrawSQLException {
 
 
     public ParseException(String msg) {

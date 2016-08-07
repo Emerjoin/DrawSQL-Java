@@ -1,9 +1,9 @@
-package mz.co.talkcode.drawQL.impl;
+package mz.co.talkcode.drawSQL.impl;
 
-import mz.co.talkcode.drawQL.SQLGenerationException;
-import mz.co.talkcode.drawQL.SQLGenerator;
-import mz.co.talkcode.drawQL.SketchContext;
-import mz.co.talkcode.drawQL.TableInfo;
+import mz.co.talkcode.drawSQL.SQLGenerationException;
+import mz.co.talkcode.drawSQL.SQLGenerator;
+import mz.co.talkcode.drawSQL.SketchContext;
+import mz.co.talkcode.drawSQL.TableInfo;
 import org.apache.log4j.Logger;
 
 /**

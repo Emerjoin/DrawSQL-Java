@@ -1,4 +1,4 @@
-package mz.co.talkcode.drawQL;
+package mz.co.talkcode.drawSQL;
 
 /**
  * Exception thrown while generating INSERT SQL statements.

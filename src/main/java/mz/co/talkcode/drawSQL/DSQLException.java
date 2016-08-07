@@ -1,9 +1,9 @@
-package mz.co.talkcode.drawQL;
+package mz.co.talkcode.drawSQL;
 
 /**
  * @author Mário Júnior
  */
-public class DSQLException extends  DrawQLException{
+public class DSQLException extends DrawSQLException {
 
 
     public DSQLException(String msg) {

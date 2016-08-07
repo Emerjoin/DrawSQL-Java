@@ -1,4 +1,4 @@
-package mz.co.talkcode.drawQL;
+package mz.co.talkcode.drawSQL;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Represents a sketches parser. Reads a sketch and turns it into a {@link TableInfo} array.
  * @author Mário Júnior
  */
-public interface Parser extends DrawQLComponent {
+public interface Parser extends DrawSQLComponent {
 
     /**
      * Finds information about tables in a sketch : this method should only
@@ -24,9 +24,9 @@ public interface Parser extends DrawQLComponent {
 
 
     /**
-     * Parses each row in a table and generates a {@link mz.co.talkcode.drawQL.TableInfo.DataRow} instance
+     * Parses each row in a table and generates a {@link mz.co.talkcode.drawSQL.TableInfo.DataRow} instance
      * for each parsed row. This method acts on a sub-sketch previously set to the {@link TableInfo}
-     * along with its  {@link mz.co.talkcode.drawQL.TableInfo.ColumnInfo} instances.
+     * along with its  {@link mz.co.talkcode.drawSQL.TableInfo.ColumnInfo} instances.
      * This method only acts after the {@link #readColumns(TableInfo)}.
      * @param tableInfo information about the table containing the rows
      * @throws ParseException - if the sketch is missformated or something else went wrong during the rows parsing process.
@@ -36,7 +36,7 @@ public interface Parser extends DrawQLComponent {
 
     /**
      * Figures out what are the columns declared for a table.
-     * Creates a {@link mz.co.talkcode.drawQL.TableInfo.ColumnInfo} instance for
+     * Creates a {@link mz.co.talkcode.drawSQL.TableInfo.ColumnInfo} instance for
      * each declared column and adds to the
      * @param tableInfo information about the table containing the rows
      * @throws ParseException - if the sketch is missformated or something else went wrong during the columns parsing process.

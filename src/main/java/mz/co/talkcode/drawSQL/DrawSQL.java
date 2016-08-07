@@ -1,7 +1,7 @@
-package mz.co.talkcode.drawQL;
+package mz.co.talkcode.drawSQL;
 
-import mz.co.talkcode.drawQL.impl.DefaultParser;
-import mz.co.talkcode.drawQL.impl.DefaultSQLGenerator;
+import mz.co.talkcode.drawSQL.impl.DefaultParser;
+import mz.co.talkcode.drawSQL.impl.DefaultSQLGenerator;
 import org.apache.log4j.Logger;
 
 import java.io.*;
@@ -15,7 +15,7 @@ import java.util.Scanner;
 /**
  * @author Mário Júnior
  */
-public class DrawQL implements SketchContext {
+public class DrawSQL implements SketchContext {
 
 
     private TableInfo[] tableInfos=null;
@@ -84,7 +84,7 @@ public class DrawQL implements SketchContext {
 
     }
 
-    private DrawQL(){
+    private DrawSQL(){
 
 
 
@@ -132,13 +132,13 @@ public class DrawQL implements SketchContext {
         private SQLGenerator sqlGenerator;
         private Parser parser;
         private Scanner scanner = null;
-        private DrawQL drawQL = null;
+        private DrawSQL drawSQL = null;
 
         public Builder(){
 
             sqlGenerator = new DefaultSQLGenerator();
             parser = new DefaultParser();
-            drawQL = new DrawQL();
+            drawSQL = new DrawSQL();
 
 
         }
@@ -158,14 +158,14 @@ public class DrawQL implements SketchContext {
 
         public Builder enableLogging(){
 
-            drawQL.logger =  Logger.getLogger(DrawQL.class);
+            drawSQL.logger =  Logger.getLogger(DrawSQL.class);
             return this;
 
         }
 
         public Builder enableLogging(Logger logger){
 
-            drawQL.logger =  logger;
+            drawSQL.logger =  logger;
             return this;
 
         }
@@ -207,7 +207,7 @@ public class DrawQL implements SketchContext {
                 throw new IllegalStateException("Null SQLGenerator instance");
 
             this.sqlGenerator = sqlGenerator;
-            this.sqlGenerator.setContext(drawQL);
+            this.sqlGenerator.setContext(drawSQL);
             return this;
 
         }
@@ -218,25 +218,25 @@ public class DrawQL implements SketchContext {
                 throw new NullPointerException("Null Parser instance");
 
             this.parser = parser;
-            this.parser.setContext(drawQL);
+            this.parser.setContext(drawSQL);
             return this;
 
         }
 
-        public DrawQL build() throws DrawQLException{
+        public DrawSQL build() throws DrawSQLException {
 
             if(scanner==null)
                 throw new IllegalStateException("No sketch specified");
 
 
-            parser.setContext(drawQL);
-            sqlGenerator.setContext(drawQL);
+            parser.setContext(drawSQL);
+            sqlGenerator.setContext(drawSQL);
 
-            drawQL.tableInfos =  parser.scan(scanner);
-            drawQL.generator = sqlGenerator;
-            drawQL.parser = this.parser;
-            drawQL.prepare();
-            return drawQL;
+            drawSQL.tableInfos =  parser.scan(scanner);
+            drawSQL.generator = sqlGenerator;
+            drawSQL.parser = this.parser;
+            drawSQL.prepare();
+            return drawSQL;
 
         }
 

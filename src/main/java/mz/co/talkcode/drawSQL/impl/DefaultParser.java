@@ -1,6 +1,6 @@
-package mz.co.talkcode.drawQL.impl;
+package mz.co.talkcode.drawSQL.impl;
 
-import mz.co.talkcode.drawQL.*;
+import mz.co.talkcode.drawSQL.*;
 import org.apache.log4j.Logger;
 
 import java.io.ByteArrayInputStream;

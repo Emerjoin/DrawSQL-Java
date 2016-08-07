@@ -1,9 +1,9 @@
-package mz.co.talkcode.drawQL;
+package mz.co.talkcode.drawSQL;
 /**
  * Represents an INSERT SQL statements generator.
  * @author Mário Júnior
  */
-public interface SQLGenerator extends DrawQLComponent {
+public interface SQLGenerator extends DrawSQLComponent {
 
     /**
      * Generates an SQL INSERT statement for each row found in a table.
