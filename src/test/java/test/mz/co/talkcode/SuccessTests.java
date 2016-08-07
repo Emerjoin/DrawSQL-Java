@@ -23,6 +23,8 @@ public class SuccessTests {
             DrawSQL drawSQL = builder.fromSketch(new File("test/sketch1.dql")).build();
             assertEquals(1, drawSQL.getTableInfos().length);
 
+
+
             TableInfo tableInfo = drawSQL.getTableInfos()[0];
             TableInfo.DataRow[] rows = tableInfo.getRows();
             assertEquals("person",tableInfo.getName());
