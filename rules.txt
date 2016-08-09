@@ -1,4 +1,0 @@
-Rules:
-1. The first column should be non text column : avoid to have the value --- on the left
-2. To avoid trim the ; should be used
-3. the NULL text matches NULL

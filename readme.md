@@ -1,31 +1,31 @@
 # Draw-SQL
 Draw table sketches and we turn them into SQL INSERT Statements like magic.
+Integration tests with relational databases will never be a pain again.
 
 [![Build Status](https://travis-ci.org/talk-code/DrawSQL.svg?branch=master)](https://travis-ci.org/talk-code/DrawSQL)
 
 ##Not understanding?
 
 ### This sketch
+
+```text
 @person
 -----------------------
-id  | name | age      |
+id  | name | age      
 -----------------------
 1     Enuar  21
 2     Gaby   23
 3     Yman   26
 -----------------------
+```
 
 ### Becomes this:
 
-````sql
+```sql
 INSERT INTO person(id,name,age) VALUES(1,'Enuar',21);
 INSERT INTO person(id,name,age) VALUES(2,'Gaby',23);
 INSERT INTO person(id,name,age) VALUES(3,'Yman',26);
 ```
-
-
-## Why is this useful?
-We make it easier to create integration tests with relational databases.
 
 
 ## You want it?
@@ -37,8 +37,29 @@ We make it easier to create integration tests with relational databases.
 
 
 #### Repository
+```xml
+    ...
+    <repository>
+       <id>talk-code</id>
+       <name>maven-repo</name>
+       <url>https://github.com/talk-code/maven-repo/raw/master</url>
+    </repository>
+    ...
+
+```
+
 
 #### Dependency
+```xml
+    ...
+    <dependency>
+        <groupId>mz.co.talkcode</groupId>
+        <artifactId>DrawSQL</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependecy>
+    ...
+
+```
 
 
 ## The magic steps
