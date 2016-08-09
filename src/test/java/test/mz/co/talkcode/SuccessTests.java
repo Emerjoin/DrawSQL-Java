@@ -17,6 +17,9 @@ public class SuccessTests {
     @Test
     public void sketch1Test(){
 
+
+        fail();
+
         try {
 
             DrawSQL.Builder builder = new DrawSQL.Builder();
