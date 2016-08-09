@@ -1,5 +1,3 @@
-package test.mz.co.talkcode;
-
 import mz.co.talkcode.drawSQL.DrawSQL;
 import mz.co.talkcode.drawSQL.DrawSQLException;
 import mz.co.talkcode.drawSQL.TableInfo;
@@ -12,7 +10,7 @@ import java.io.IOException;
 /**
  * @author Mário Júnior
  */
-public class SuccessTests {
+public class SuccessTest {
 
     @Test
     public void sketch1Test(){
