@@ -10,20 +10,16 @@ import java.io.IOException;
 /**
  * @author Mário Júnior
  */
-public class SuccessTest {
+public class DrawSQLTest {
 
     @Test
-    public void sketch1Test(){
-
-
-        fail();
+    public void buildTest1(){
 
         try {
 
             DrawSQL.Builder builder = new DrawSQL.Builder();
             DrawSQL drawSQL = builder.fromSketch(new File("test/sketch1.dql")).build();
             assertEquals(1, drawSQL.getTableInfos().length);
-
 
 
             TableInfo tableInfo = drawSQL.getTableInfos()[0];
@@ -59,7 +55,7 @@ public class SuccessTest {
     }
 
     @Test
-    public void sketch2Test(){
+    public void buildTest2(){
 
         try {
 
@@ -101,7 +97,7 @@ public class SuccessTest {
 
 
     @Test
-    public void sketch3Test(){
+    public void buildTest3(){
 
         try {
 
