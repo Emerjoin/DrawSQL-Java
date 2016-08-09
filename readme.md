@@ -64,30 +64,25 @@ INSERT INTO person(id,name,age) VALUES(3,'Yman',26);
 
 ## The basics
 
-### Getting SQK from sketch file
+### Getting SQL from sketch file
 ```java
-            DrawSQL.Builder builder = new DrawSQL.Builder();
-            DrawSQL drawSQL = builder.fromSketch(new File("your_sketch_file_path")).build();
-            String generatedSql = drawSQL.getSQL();
+      DrawSQL.Builder builder = new DrawSQL.Builder();
+      DrawSQL drawSQL = builder.fromSketch(new File("your_sketch_file_path")).build();
+      String generatedSql = drawSQL.getSQL(); //This will return the generated SQL.
 
 ```
 
 
 ### Inserting from a sketch file directly to a JDBC connection
 ```java
-            DrawSQL.Builder builder = new DrawSQL.Builder();
-            DrawSQL drawSQL = builder.fromSketch(new File("your_sketch_file_path")).build();
-            drawSQL.apply(jdbcConnection);
+
+      DrawSQL.Builder builder = new DrawSQL.Builder();
+      DrawSQL drawSQL = builder.fromSketch(new File("your_sketch_file_path")).build();
+      drawSQL.apply(jdbcConnection);//This will execute the sql against a JDBC Connection object.
 
 ```
 
-## Need a ready example?
-
-
-
-
 ## What are the sketching rules?
-
 ### Align the column name and the values both to left.
 The first character of a column name should be aligned with its values
 
@@ -115,7 +110,6 @@ id  | name | age
 ```
 
 ### Align the column separator (|) to the right of the largest column value
-
 #### wrong
 ```text
 @person
@@ -127,7 +121,6 @@ id  | name |       age
  3     Yman        26
 -----------------------
 ```
-
 #### correct
 ```text
 @person
@@ -142,15 +135,14 @@ id  | name      |  age
 
 
 
-## If You text value has empty space on the right
-
+## Text values with empty space on the right - how to keep the space
+### The problem
+### The solution
 
 
 ## Id Comments - refresh your mind
-
+### The problem
+### The solution
 
 
 ## Where do you find the API documentation?
-
-
-
