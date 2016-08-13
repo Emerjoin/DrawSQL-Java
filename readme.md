@@ -11,7 +11,7 @@ Integration tests with relational databases will never be a pain again.
 ```text
 @person
 -----------------------
-id  | name | age      
+id  | name | age      |
 -----------------------
 1     Enuar  21
 2     Gaby   23
@@ -53,7 +53,7 @@ INSERT INTO person(id,name,age) VALUES(3,'Yman',26);
         <groupId>mz.co.talkcode</groupId>
         <artifactId>DrawSQL</artifactId>
         <version>1.0-SNAPSHOT</version>
-    </dependecy>
+    </dependency>
     ...
 
 ```
@@ -87,7 +87,7 @@ The first character of a column name should be aligned with its values
 ```text
 @person
 -----------------------
-id  | name   | age      
+id  | name   | age    | 
 -----------------------
  1     Enuar  21
  2     Gaby   23
@@ -98,7 +98,7 @@ id  | name   | age
 ```text
 @person
 -----------------------
-id  | name | age      
+id  | name | age      |
 -----------------------
 1     Enuar  21
 2     Gaby   23
@@ -110,24 +110,24 @@ id  | name | age
 #### wrong
 ```text
 @person
------------------------
-id  | name |       age      
------------------------
+------------------------
+id  | name |       age |      
+------------------------
  1     Enuar Ben   21
  2     Gaby        23
  3     Yman        26
------------------------
+------------------------
 ```
 #### correct
 ```text
 @person
------------------------
-id  | name      |  age      
------------------------
+------------------------
+id  | name      |  age |      
+------------------------
  1     Enuar Ben   21
  2     Gaby        23
  3     Yman        26
------------------------
+------------------------
 ```
 
 
