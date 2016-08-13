@@ -30,7 +30,7 @@ INSERT INTO person(id,name,age) VALUES(3,'Yman',26);
 # Download
 
 ## JAR
-
+[Get from here](https://talk-code.github.io/releases/get/DrawSQL/drawSQL-1.0.jar)
 
 ## Maven
 
