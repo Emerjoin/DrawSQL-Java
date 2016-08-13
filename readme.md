@@ -27,6 +27,26 @@ INSERT INTO person(id,name,age) VALUES(2,'Gaby',23);
 INSERT INTO person(id,name,age) VALUES(3,'Yman',26);
 ```
 
+
+# How?
+
+## Getting SQL from sketch file
+```java
+      DrawSQL.Builder builder = new DrawSQL.Builder();
+      DrawSQL drawSQL = builder.fromSketch(new File("your_sketch_file_path")).build();
+      String generatedSql = drawSQL.getSQL(); //This will return the generated SQL.
+
+```
+
+
+## Inserting from a sketch file directly to a JDBC connection
+```java
+
+      drawSQL.apply(jdbcConnection);//This will execute the sql against a JDBC Connection object.
+
+```
+
+
 # Get
 
 ## Download JAR
@@ -59,25 +79,6 @@ INSERT INTO person(id,name,age) VALUES(3,'Yman',26);
 ```
 
 
-# The basics
-
-## Getting SQL from sketch file
-```java
-      DrawSQL.Builder builder = new DrawSQL.Builder();
-      DrawSQL drawSQL = builder.fromSketch(new File("your_sketch_file_path")).build();
-      String generatedSql = drawSQL.getSQL(); //This will return the generated SQL.
-
-```
-
-
-## Inserting from a sketch file directly to a JDBC connection
-```java
-
-      DrawSQL.Builder builder = new DrawSQL.Builder();
-      DrawSQL drawSQL = builder.fromSketch(new File("your_sketch_file_path")).build();
-      drawSQL.apply(jdbcConnection);//This will execute the sql against a JDBC Connection object.
-
-```
 
 # What are the sketching rules?
 ### Align the column name and the values both to left.
