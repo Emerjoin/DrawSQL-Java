@@ -4,7 +4,7 @@ Integration tests with relational databases will never be a pain again.
 
 [![Build Status](https://travis-ci.org/talk-code/DrawSQL.svg?branch=master)](https://travis-ci.org/talk-code/DrawSQL)
 
-##Not understanding?
+## What does DrawSQL do?
 
 ### This sketch
 
