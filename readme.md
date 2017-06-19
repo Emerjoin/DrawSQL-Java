@@ -131,15 +131,3 @@ id  | name      |  age |
 ------------------------
 ```
 
-
-## Text values with empty space on the right - how to keep the space
-### The problem
-### The solution
-
-
-## Id Comments - refresh your mind
-### The problem
-### The solution
-
-
-## Where do you find the API documentation?
