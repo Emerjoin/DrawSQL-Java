@@ -12,7 +12,6 @@ import java.util.Scanner;
  */
 public class DefaultParser implements Parser {
 
-
     private SketchContext sketchContext;
 
     public TableInfo[] scan(Scanner document) throws ParseException {
