@@ -131,3 +131,9 @@ id  | name      |  age |
 ------------------------
 ```
 
+### Columns with semicolons
+1. Columns with whitespaces will be trimmed automatically
+
+2. In case you want to skip trimming and insert whitespace explicitly you have to put a semicolon where it ends.
+
+3. In case you want to have whitespace and semicolon explicitly inserted, you have to put two semicolons.

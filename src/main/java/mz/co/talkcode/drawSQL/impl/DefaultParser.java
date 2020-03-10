@@ -103,14 +103,7 @@ public class DefaultParser implements Parser {
 
         for(TableInfo.ColumnInfo col: tableInfo.getColumnInfos()){
 
-            String colValue = col.getValue(regularized);
-
-            //Avoid Trimming
-            int semiCollonIndex = colValue.indexOf(';');
-            if(semiCollonIndex!=-1&&semiCollonIndex!=0)
-                colValue = colValue.substring(0,semiCollonIndex);
-                else colValue = colValue.trim();
-
+            String colValue = normalizeColVal(col.getValue(regularized));
 
             //Check asterisk (escaped or not)
             char[] valueChars = colValue.toCharArray();
@@ -151,6 +144,24 @@ public class DefaultParser implements Parser {
         }
 
         row.add();
+
+    }
+
+    private String normalizeColVal(String colValue){
+
+        //Avoid Trimming
+        int semiColonIndex = colValue.lastIndexOf(';');
+        if(colValue.length() > semiColonIndex
+                && colValue.charAt(semiColonIndex+1)==' '
+                && semiColonIndex!=-1&&semiColonIndex!=0){
+
+            colValue = colValue.substring(0,semiColonIndex);
+
+        } else {
+            colValue = colValue.trim();
+        }
+
+        return colValue;
 
     }
 
